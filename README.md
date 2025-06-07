@@ -1,7 +1,7 @@
 # Sistema de Gestão de Pedidos 
 
 Este projeto consiste numa aplicação backend desenvolvida em Java com o objetivo de gerir produtos, pedidos, carrinho de compras e pagamentos. 
-É voltado para um sistema com dois tipos de utilizadores: Cliente e Administrador. A aplicação oferece operações CRUD e autenticação básica para cada tipo de utilizador.
+É voltado para um sistema com dois tipos de utilizadores: Cliente e Administrador. A aplicação oferece operações CRUD para cada utilizador
 
 ## Tecnologias Utilizadas
 
