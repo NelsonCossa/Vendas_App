@@ -42,47 +42,151 @@ Este projeto consiste numa aplicação backend desenvolvida em Java com o objeti
 
 2.**API Endpoints**
 
-   # 🔵 USER CONTROLLER – /users
+ Claro! Vou ampliar e organizar o teu README com base nos comandos HTTP que forneceste, adicionando os endpoints que faltam para cada controller e mantendo o padrão de comandos HTTP com exemplos do `httpie`. Ficará assim:
 
-# ➕ Criar Utilizador
+---
+
+# 📌 Endpoints da API
+
+---
+
+## 🔵 USER CONTROLLER – `/users`
+
+➕ **Criar Utilizador**
+
+```bash
 http POST :7707/users name="Nelson" email="nelson@example.com" phone="841234567"
+```
 
-# 📄 Listar Todos os Utilizadores
+📄 **Listar Todos os Utilizadores**
+
+```bash
 http GET :7707/users
+```
 
-# 🔍 Buscar Utilizador por ID
+🔍 **Buscar Utilizador por ID**
+
+```bash
 http GET :7707/users/1
+```
 
-# ♻️ Atualizar Utilizador
+♻️ **Atualizar Utilizador**
+
+```bash
 http PUT :7707/users/1 name="Nelson Atualizado" email="nelson.novo@example.com" phone="848888888"
+```
 
-# ❌ Remover Utilizador
+❌ **Remover Utilizador**
+
+```bash
 http DELETE :7707/users/1
+```
 
+---
 
-# 🟢 PRODUCT CONTROLLER – /products
+## 🟢 PRODUCT CONTROLLER – `/products`
 
-# 📄 Listar Todos os Produtos
+📄 **Listar Todos os Produtos**
+
+```bash
 http GET :7707/products
+```
 
-# 🔍 Buscar Produto por ID
+🔍 **Buscar Produto por ID**
+
+```bash
 http GET :7707/products/1
+```
 
+➕ **Criar Produto**
 
-# 🟡 CATEGORY CONTROLLER – /categories
+```bash
+http POST :7707/products name="Produto Exemplo" price:=100 stock:=50 category_id:=3
+```
 
-# 📄 Listar Todas as Categorias
+♻️ **Atualizar Produto**
+
+```bash
+http PUT :7707/products/1 name="Produto Atualizado" price:=120 stock:=40
+```
+
+❌ **Remover Produto**
+
+```bash
+http DELETE :7707/products/1
+```
+
+---
+
+## 🟡 CATEGORY CONTROLLER – `/categories`
+
+📄 **Listar Todas as Categorias**
+
+```bash
 http GET :7707/categories
+```
 
-# 🔍 Buscar Categoria por ID
+🔍 **Buscar Categoria por ID**
+
+```bash
 http GET :7707/categories/1
+```
 
+➕ **Criar Categoria**
 
-# 🟠 ORDER CONTROLLER – /orders
+```bash
+http POST :7707/categories name="Categoria Exemplo"
+```
 
-# 📄 Listar Todos os Pedidos
+♻️ **Atualizar Categoria**
+
+```bash
+http PUT :7707/categories/1 name="Categoria Atualizada"
+```
+
+❌ **Remover Categoria**
+
+```bash
+http DELETE :7707/categories/1
+```
+
+---
+
+## 🟠 ORDER CONTROLLER – `/orders`
+
+📄 **Listar Todos os Pedidos**
+
+```bash
 http GET :7707/orders
+```
 
-# 🔍 Buscar Pedido por ID
+🔍 **Buscar Pedido por ID**
+
+```bash
 http GET :7707/orders/1
+```
+
+➕ **Criar Pedido**
+
+```bash
+http POST :7707/orders user_id:=1 product_ids:='[1, 2]' total:=300 status:=1
+```
+
+♻️ **Atualizar Pedido**
+
+```bash
+http PUT :7707/orders/1 status:=2
+```
+
+❌ **Remover Pedido**
+
+```bash
+http DELETE :7707/orders/1
+```
+
+🔎 **Buscar Pedidos por Estado**
+
+```bash
+http GET :7707/orders/status?code=1
+
 
