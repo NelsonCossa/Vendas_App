@@ -13,21 +13,28 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 @Entity
 @Table(name = "tb_payment")
+@Schema(description = "Entidade que representa um pagamento associado a um pedido (Order).")
 public class Payment implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Schema(description = "Identificador único do pagamento", example = "1")
 	private Long id;
+
+	@Schema(description = "Momento em que o pagamento foi realizado", example = "2024-06-07T14:30:00Z")
 	private Instant moment;
-	
+
 	@JsonIgnore
 	@OneToOne
 	@MapsId
+	@Schema(description = "Pedido associado ao pagamento", accessMode = Schema.AccessMode.READ_ONLY)
 	private Order order;
-	
+
 	public Payment() {
 	}
 

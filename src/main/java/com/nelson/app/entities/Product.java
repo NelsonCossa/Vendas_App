@@ -16,21 +16,34 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 @Entity
 @Table(name = "tb_product")
+@Schema(description = "Entidade que representa um produto disponível para venda.")
 public class Product implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Schema(description = "Identificador único do produto", example = "1")
 	private Long id;
+
+	@Schema(description = "Nome do produto", example = "Smartphone XYZ")
 	private String name;
+
+	@Schema(description = "Descrição detalhada do produto", example = "Smartphone com tela de 6.5 polegadas e 128GB de armazenamento")
 	private String description;
+
+	@Schema(description = "Preço do produto", example = "599.99")
 	private Double price;
+
+	@Schema(description = "URL da imagem do produto", example = "http://example.com/images/product1.png")
 	private String imgUrl;
 
 	@ManyToMany
 	@JoinTable(name = "tb_product_category", joinColumns = @JoinColumn(name = "product_id"), inverseJoinColumns = @JoinColumn(name = "category_id"))
+	@Schema(description = "Categorias às quais o produto pertence")
 	private Set<Category> categories = new HashSet<>();
 
 	@OneToMany(mappedBy = "id.product")

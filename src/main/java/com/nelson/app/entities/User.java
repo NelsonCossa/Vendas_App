@@ -17,22 +17,32 @@ import io.swagger.v3.oas.annotations.media.Schema;
 
 @Entity
 @Table(name = "tb_user")
+@Schema(description = "Entidade que representa um utilizador do sistema")
 public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	
+	@Schema(description = "Identificador único do utilizador", example = "1")
 	private Long id;
+
+	@Schema(description = "Nome completo do utilizador", example = "Nelson Fabião Cossa")
 	private String name;
+
+	@Schema(description = "Endereço de email do utilizador", example = "nelson@example.com")
 	private String email;
+
+	@Schema(description = "Número de telefone do utilizador", example = "+258 84 123 4567")
 	private String phone;
+
+	@Schema(description = "Senha do utilizador (não deve ser exposta em respostas públicas)", example = "123456")
 	private String password;
-	
+
 	@JsonIgnore
 	@OneToMany(mappedBy = "client")
+	@Schema(description = "Lista de encomendas associadas ao utilizador")
 	private List<Order> orders = new ArrayList<>();
-	
+
 	public User() {
 	}
 
@@ -85,11 +95,10 @@ public class User implements Serializable {
 		this.password = password;
 	}
 
-
 	public List<Order> getOrders() {
 		return orders;
 	}
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
