@@ -45,44 +45,44 @@ Este projeto consiste numa aplicação backend desenvolvida em Java com o objeti
    # 🔵 USER CONTROLLER – /users
 
 # ➕ Criar Utilizador
-http POST :8080/users name="Nelson" email="nelson@example.com" phone="841234567"
+http POST :7707/users name="Nelson" email="nelson@example.com" phone="841234567"
 
 # 📄 Listar Todos os Utilizadores
-http GET :8080/users
+http GET :7707/users
 
 # 🔍 Buscar Utilizador por ID
-http GET :8080/users/1
+http GET :7707/users/1
 
 # ♻️ Atualizar Utilizador
-http PUT :8080/users/1 name="Nelson Atualizado" email="nelson.novo@example.com" phone="848888888"
+http PUT :7707/users/1 name="Nelson Atualizado" email="nelson.novo@example.com" phone="848888888"
 
 # ❌ Remover Utilizador
-http DELETE :8080/users/1
+http DELETE :7707/users/1
 
 
 # 🟢 PRODUCT CONTROLLER – /products
 
 # 📄 Listar Todos os Produtos
-http GET :8080/products
+http GET :7707/products
 
 # 🔍 Buscar Produto por ID
-http GET :8080/products/1
+http GET :7707/products/1
 
 
 # 🟡 CATEGORY CONTROLLER – /categories
 
 # 📄 Listar Todas as Categorias
-http GET :8080/categories
+http GET :7707/categories
 
 # 🔍 Buscar Categoria por ID
-http GET :8080/categories/1
+http GET :7707/categories/1
 
 
 # 🟠 ORDER CONTROLLER – /orders
 
 # 📄 Listar Todos os Pedidos
-http GET :8080/orders
+http GET :7707/orders
 
 # 🔍 Buscar Pedido por ID
-http GET :8080/orders/1
+http GET :7707/orders/1
 
